@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display-hero: "Bebas Neue", sans-serif;
+  --font-metric-huge: "Bebas Neue", sans-serif;
+  --font-display-brand: "Playfair Display", Georgia, serif;
+  --font-quote-editorial: "Playfair Display", Georgia, serif;
+  --font-headline-xl: "Plus Jakarta Sans", sans-serif;
+  --font-headline-lg: "Plus Jakarta Sans", sans-serif;
+  --font-headline-md: "Plus Jakarta Sans", sans-serif;
+  --font-body-lg: "Plus Jakarta Sans", sans-serif;
+  --font-body-md: "Plus Jakarta Sans", sans-serif;
+  --font-body-sm: "Plus Jakarta Sans", sans-serif;
+  --font-label-caps: "Plus Jakarta Sans", sans-serif;
+
+  --color-surface-emerald-deep: #022C22;
+  --color-surface-emerald-refined: #064E3B;
+  --color-accent-emerald: #059669;
+  --color-surface-canvas: #FFFFFF;
+  --color-surface-alabaster: #F8FAFC;
+  --color-border-crisp: #E2E8F0;
+  --color-text-slate-black: #0F172A;
+  --color-text-muted-slate: #475569;
+
+  --color-primary-fixed: #c2ebdc;
+  --color-primary-fixed-dim: #a7cfc0;
+  --color-secondary-container: #adedd3;
+  --color-on-secondary-container: #306d58;
+  --color-secondary: #2b6954;
+  --color-on-tertiary-container: #1fa072;
+  --color-surface: #faf8ff;
+  --color-on-surface: #131b2e;
+  --color-on-primary: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-body-md);
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+  }
+}
+
+/* Custom styling for editorial layout */
+.font-bebas {
+  font-family: "Bebas Neue", sans-serif;
+}
+.font-playfair {
+  font-family: "Playfair Display", Georgia, serif;
+}
+.font-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Custom scrollbar hide */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
