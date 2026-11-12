@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, Linkedin, Github, Globe, Copy, ArrowUpRight, MessageSquare } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface ContactSectionProps {
   onOpenBooking: () => void;
@@ -50,61 +51,65 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
   return (
     <>
-      {/* LAYANAN & FINAL CTA BANNER (Deep Emerald Canvas) */}
-      <section className="w-full px-6 lg:px-10 pb-16" id="kontak">
-        <div className="max-w-7xl mx-auto rounded-[32px] bg-[#022C22] p-8 lg:p-14 text-white relative overflow-hidden shadow-2xl border border-[#064E3B]">
-          {/* Subtle Radial Backdrop */}
-          <div className="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-[#059669]/20 blur-3xl pointer-events-none" />
-
+      {/* FINAL CTA BANNER (Deep Luxury Emerald Canvas, quiet depth without blurred blobs) */}
+      <section className="w-full px-4 sm:px-6 lg:px-10 pb-16" id="kontak">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-7xl mx-auto rounded-3xl bg-[#022C22] p-8 lg:p-12 text-white relative overflow-hidden shadow-lg border border-[#064E3B]"
+        >
+          
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
             {/* Left: Pitch */}
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#059669] animate-ping" />
-                <span className="text-[11px] font-bold uppercase text-[#059669] tracking-widest">
-                  KOLABORASI DIGITAL
+                <span className="w-2 h-2 rounded-full bg-[#059669]" />
+                <span className="text-xs font-semibold text-[#a7cfc0]">
+                  Kolaborasi digital
                 </span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight">
                 Punya ide proyek seru atau mau ngundang ngisi acara?
               </h2>
-              <p className="text-sm sm:text-base text-[#a7cfc0] max-w-xl leading-relaxed">
+              <p className="text-sm text-[#a7cfc0] max-w-xl leading-relaxed">
                 Entah itu kolaborasi bikin web app, workshop AI buat tim kantor/kampus, atau sekadar diskusi teknis—gas hubungi gue lewat jalur di bawah.
               </p>
 
-              <div className="pt-4 flex flex-wrap gap-3">
+              <div className="pt-2 flex flex-wrap gap-2.5">
                 <a
                   href="mailto:adityafakhri03@gmail.com"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#022C22] text-[11px] font-bold uppercase tracking-wider hover:bg-[#F8FAFC] transition-all cursor-pointer shadow-md"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#022C22] text-xs font-semibold uppercase tracking-wider hover:bg-[#F8FAFC] transition-colors cursor-pointer shadow-sm"
                 >
-                  <span>EMAIL GUE LANGSUNG</span>
+                  <span>Email langsung</span>
                   <ArrowUpRight size={14} />
                 </a>
                 <a
                   href="https://wa.me/62895324105731"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#064E3B] text-white text-[11px] font-bold uppercase tracking-wider hover:bg-[#059669] transition-all cursor-pointer border border-[#064E3B]"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#064E3B] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#059669] transition-colors cursor-pointer border border-[#064E3B]"
                 >
-                  <span>WHATSAPP CHAT</span>
+                  <span>WhatsApp chat</span>
                   <ArrowUpRight size={14} />
                 </a>
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent text-[#c2ebdc] text-[11px] font-bold uppercase tracking-wider hover:bg-[#064E3B]/50 transition-all cursor-pointer border border-[#064E3B]"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-transparent text-[#c2ebdc] text-xs font-semibold uppercase tracking-wider hover:bg-[#064E3B]/50 transition-colors cursor-pointer border border-[#064E3B]"
                 >
                   <MessageSquare size={13} />
-                  <span>FORMULIR KOLABORASI</span>
+                  <span>Formulir kolaborasi</span>
                 </button>
               </div>
             </div>
 
             {/* Right: Contact Direct Roster */}
             <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
-              <div className="space-y-1 bg-[#064E3B]/50 p-6 rounded-[24px] border border-[#064E3B]/70 backdrop-blur-sm">
-                <span className="text-[10px] font-bold uppercase text-[#c2ebdc] tracking-widest block pb-3 border-b border-[#064E3B]">
-                  SALURAN RESMI
+              <div className="space-y-0.5 bg-[#064E3B]/40 p-5 rounded-2xl border border-[#064E3B]/70">
+                <span className="text-xs font-semibold text-[#c2ebdc] block pb-2.5 border-b border-[#064E3B]">
+                  Saluran resmi
                 </span>
 
                 {contactChannels.map((channel) => {
@@ -112,7 +117,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   return (
                     <div
                       key={channel.label}
-                      className="flex items-center justify-between py-2.5 text-[#a7cfc0] hover:text-white transition-colors border-b border-[#064E3B]/50 last:border-b-0 text-xs"
+                      className="flex items-center justify-between py-2 text-[#a7cfc0] hover:text-white transition-colors border-b border-[#064E3B]/40 last:border-b-0 text-xs"
                     >
                       <a
                         href={channel.href}
@@ -130,7 +135,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                             onClick={() =>
                               onCopyText(channel.value, `${channel.label} disalin ke clipboard!`)
                             }
-                            className="p-1 hover:text-white text-[#a7cfc0] transition-colors"
+                            className="p-1 hover:text-white text-[#a7cfc0] transition-colors cursor-pointer"
                             title={`Salin ${channel.label}`}
                           >
                             <Copy size={12} />
@@ -158,79 +163,80 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* FOOTER */}
-      <footer className="w-full bg-[#022C22] text-white py-14 border-t border-[#064E3B]">
+      <footer className="w-full bg-[#022C22] text-white py-12 border-t border-[#064E3B]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-[#064E3B]">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-[#064E3B]">
             {/* Col 1 */}
-            <div className="md:col-span-6 flex flex-col justify-between space-y-6">
-              <div className="space-y-3">
-                <span className="text-[11px] font-bold uppercase text-[#059669] tracking-widest">
-                  KOLABORASI TEKNOLOGI KELAS TINGGI
+            <div className="md:col-span-6 flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <span className="text-xs font-semibold text-[#059669]">
+                  Kolaborasi teknologi
                 </span>
-                <h3 className="font-sans text-2xl sm:text-3xl font-extrabold text-white uppercase tracking-tight max-w-md">
-                  BANGUN SISTEM TANGGUH TANPA KOMPROMI.
+                <h3 className="font-sans text-xl sm:text-2xl font-bold text-white tracking-tight max-w-md">
+                  Bangun sistem tangguh tanpa kompromi
                 </h3>
                 <p className="text-xs sm:text-sm text-[#a7cfc0] max-w-lg leading-relaxed">
                   Membimbing tim engineering, merancang arsitektur AI skalabel, dan menyuguhkan keynote berbobot. Siap diskusi visi teknismu sekarang.
                 </p>
               </div>
+
               <div className="flex items-center gap-3">
                 <button
                   type="button"
                   onClick={onOpenBooking}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-[#022C22] text-[11px] font-bold uppercase hover:bg-[#F8FAFC] transition-all cursor-pointer shadow-sm"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#022C22] text-xs font-semibold uppercase hover:bg-[#F8FAFC] transition-colors cursor-pointer shadow-sm"
                 >
-                  <span>MULAI KONSULTASI</span>
+                  <span>Mulai konsultasi</span>
                   <ArrowUpRight size={13} />
                 </button>
               </div>
             </div>
 
             {/* Col 2 */}
-            <div className="md:col-span-3 space-y-3">
-              <span className="text-[11px] font-bold uppercase text-[#c2ebdc] tracking-widest block">
-                NAVIGASI ARSIP
+            <div className="md:col-span-3 space-y-2.5">
+              <span className="text-xs font-semibold text-[#c2ebdc] block">
+                Navigasi arsip
               </span>
-              <ul className="space-y-2 text-xs">
+              <ul className="space-y-1.5 text-xs">
                 <li>
                   <a href="#proyek" className="text-[#a7cfc0] hover:text-white transition-colors">
-                    Karya Terpilih
+                    Karya terpilih
                   </a>
                 </li>
                 <li>
                   <a href="#track-record" className="text-[#a7cfc0] hover:text-white transition-colors">
-                    Track Record & Panggung
+                    Track record & panggung
                   </a>
                 </li>
                 <li>
                   <a href="#layanan" className="text-[#a7cfc0] hover:text-white transition-colors">
-                    Layanan & Mentorship
+                    Layanan & mentorship
                   </a>
                 </li>
                 <li>
                   <a href="#kontak" className="text-[#a7cfc0] hover:text-white transition-colors">
-                    Saluran Kolaborasi
+                    Saluran kolaborasi
                   </a>
                 </li>
               </ul>
             </div>
 
             {/* Col 3 */}
-            <div className="md:col-span-3 space-y-3">
-              <span className="text-[11px] font-bold uppercase text-[#c2ebdc] tracking-widest block">
-                JARINGAN LANGSUNG
+            <div className="md:col-span-3 space-y-2.5">
+              <span className="text-xs font-semibold text-[#c2ebdc] block">
+                Jaringan langsung
               </span>
-              <ul className="space-y-2 text-xs">
+              <ul className="space-y-1.5 text-xs">
                 <li>
                   <a
                     href="mailto:adityafakhri03@gmail.com"
                     className="text-[#a7cfc0] hover:text-white transition-colors flex items-center justify-between"
                   >
-                    <span>Email Eksklusif</span>
+                    <span>Email langsung</span>
                     <ArrowUpRight size={13} />
                   </a>
                 </li>
@@ -241,7 +247,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     rel="noreferrer"
                     className="text-[#a7cfc0] hover:text-white transition-colors flex items-center justify-between"
                   >
-                    <span>WhatsApp Langsung</span>
+                    <span>WhatsApp langsung</span>
                     <ArrowUpRight size={13} />
                   </a>
                 </li>
@@ -252,7 +258,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     rel="noreferrer"
                     className="text-[#a7cfc0] hover:text-white transition-colors flex items-center justify-between"
                   >
-                    <span>LinkedIn Professional</span>
+                    <span>LinkedIn professional</span>
                     <ArrowUpRight size={13} />
                   </a>
                 </li>
@@ -263,7 +269,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                     rel="noreferrer"
                     className="text-[#a7cfc0] hover:text-white transition-colors flex items-center justify-between"
                   >
-                    <span>GitHub Repositori</span>
+                    <span>GitHub repositori</span>
                     <ArrowUpRight size={13} />
                   </a>
                 </li>
@@ -271,15 +277,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             </div>
           </div>
 
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#a7cfc0]">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#a7cfc0]">
             <div className="flex items-center gap-3">
-              <span className="font-serif text-lg font-bold text-white tracking-widest">
+              <span className="font-serif text-base font-bold text-white tracking-widest">
                 A.F.R
               </span>
-              <span>© 2025 Aditya Fakhri Riansyah. Hak Cipta Dilindungi.</span>
+              <span>© 2025 Aditya Fakhri Riansyah. Hak cipta dilindungi.</span>
             </div>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-[#a7cfc0]">
-              JAKARTA • BANDUNG • GLOBAL DISTRIBUTED
+            <div className="text-xs text-[#c2ebdc]">
+              Jakarta • Bandung • Global distributed
             </div>
           </div>
         </div>

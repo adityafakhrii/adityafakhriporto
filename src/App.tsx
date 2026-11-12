@@ -80,7 +80,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#faf8ff] text-[#131b2e] font-sans antialiased selection:bg-[#c2ebdc] selection:text-[#002018]">
+    <div className="min-h-screen bg-white text-[#0F172A] font-sans antialiased selection:bg-[#c2ebdc] selection:text-[#002018]">
       {/* Fixed Header */}
       <Header
         onOpenBooking={() => handleOpenBooking()}
@@ -89,7 +89,7 @@ export default function App() {
       />
 
       {/* Main Content Stream */}
-      <main className="w-full pt-20">
+      <main className="w-full pt-3 sm:pt-6">
         <Hero
           onOpenBooking={() => handleOpenBooking()}
           onExploreProjects={scrollToProjects}

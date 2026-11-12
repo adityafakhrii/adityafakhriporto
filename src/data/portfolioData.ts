@@ -57,6 +57,7 @@ export const PROJECTS: Project[] = [
     impact:
       'Diadopsi ribuan peserta kelas RuangAI sebagai basis pustaka prompt harian untuk coding, desain, dan otomasi kerja.',
     techStack: ['Next.js', 'REST API', 'AI Ecosystem', 'Tailwind CSS', 'TypeScript'],
+    demoUrl: 'https://prompt.ruangai.id/',
     year: '2024',
     client: 'RuangAI Ecosystem',
   },
@@ -148,6 +149,7 @@ export const PROJECTS: Project[] = [
     impact:
       'Menyediakan 20+ utility pengolah gambar (crop, compress, filter, format conversion) yang berjalan instan tanpa mengirim data pengguna ke server pihak ketiga.',
     techStack: ['Canvas API', 'JavaScript', 'Web Tools', 'CSS3', 'Web Workers'],
+    demoUrl: 'https://www.gambaryuk.com/',
     year: '2023',
     client: 'Public Utility',
   },
@@ -184,6 +186,7 @@ export const PROJECTS: Project[] = [
     impact:
       'Meningkatkan inquiry pesanan proyek custom interior dan kredibilitas merek di mata klien arsitektur dan properti.',
     techStack: ['Corporate Web', 'SEO', 'Responsive', 'Tailwind', 'Modern Web'],
+    demoUrl: 'https://heryawf.co.id/',
     year: '2023',
     client: 'PT Herya Wood Furniture',
   },
@@ -222,6 +225,25 @@ export const PROJECTS: Project[] = [
     techStack: ['JavaScript', 'Dicoding API', 'Geolocation', 'SPA', 'Webpack'],
     year: '2023',
     client: 'Dicoding Academy Showcase',
+  },
+  {
+    id: 'aa-jersey',
+    number: '12',
+    title: 'AA Jersey',
+    badge: 'E-Commerce',
+    categories: ['webapp'],
+    summary:
+      'Toko online spesialis jersey sepak bola berkualitas (Grade Ori Import, Retro, hingga Official). Dilengkapi katalog klub & timnas dunia, filter ukuran, serta sistem checkout order.',
+    problem:
+      'Pecinta sepak bola dan kolektor sering kesulitan mencari katalog jersey lengkap dengan varian ukuran, detail patch/nameset, serta alur pemesanan yang cepat dan transparan.',
+    solution:
+      'Membangun web store responsif dengan showcase katalog terstruktur berdasarkan liga/klub/musim, pencarian cepat, keranjang belanja interaktif, dan integrasi direct checkout pemesanan.',
+    impact:
+      'Menghadirkan kanal penjualan online resmi yang mudah diakses dari ponsel maupun desktop, memperluas jangkauan pembeli jersey di seluruh Indonesia.',
+    techStack: ['E-Commerce', 'Modern Web', 'Responsive', 'Catalog System', 'SEO'],
+    demoUrl: 'https://www.jerseyaa.com/',
+    year: '2024',
+    client: 'AA Jersey (Retail)',
   },
 ];
 
